@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+
+
+<style>
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Acme', sans-serif;
+	
+}
+
+
+.main{
+	width:400px;
+	height:350px;
+	margin:auto;
+	padding:auto;
+	background:yellow;
+	position:absolute;
+	text-align:center;
+	
+	
+}
+
+.group1{
+	width:50%;
+	position:relative;
+	float:left;
+	margin-top:50px;;
+}
+.group2{
+	width:50%;
+	position:relative;
+	float:right;
+}
+
+input{
+	margin-top:18px;
+}
+
+#btn{
+	margin-bottom:20px;
+}
+
+h4{
+	color:green;
+}
+
+
+</style>
+<head>
+</head>
+<body>
+
+<form>
+	<div class="main">
+		<div class="group1">
+			<h1>STUDENT GRADE CALCY FOR PLANE SCIENCE</h1>
+		</div>
+		<div class="group2">
+			<div class="item">
+				<input type="text" placeholder="Physics" id="phy">
+			</div>
+			<div class="item">
+				<input type="text" placeholder="Chemistry" id="chem">
+			</div>
+			<div class="item">
+				<input type="text" placeholder="Math's" id="Math">
+			</div>
+			<div class="item">
+				<input type="text" placeholder="Biology" id="bio">
+			</div>
+			
+			<div class="item">
+				<input type="text" placeholder="English" id="eng">
+			</div>
+			<div class="item">
+				<input type="text" placeholder="Marathi" id="mar">
+			</div>
+			
+			<div class="item">
+				<input type="button" value="Chech My Grade" id="btn" onClick="calcy()">
+			</div>
+		
+		</div>
+		
+		<div class="resultt">
+			<h4 id="showdata"></h4>
+		</div>
+	</div>
+	
+</form>	
+<script>
+	const calcy = () =>{
+		let phy=document.getElementById('phy').value;
+		let chem=document.getElementById('chem').value;
+		let Math=document.getElementById('Math').value;
+		let bio=document.getElementById('bio').value;
+		let eng=document.getElementById('eng').value;
+		let mar=document.getElementById('mar').value;
+		let grades="";
+		let msg="Do You want to check your Result? to ok pe click karo";
+		
+		let totalGrade = parseFloat(phy) + parseFloat(chem) + parseFloat(phy) + parseFloat(Math) + parseFloat(bio) + parseFloat(eng) + parseFloat(mar);
+		alert(msg);
+		
+		let percentage = (totalGrade/600)*100;
+		
+		
+		if(percentage<=100 && percentage>=80){
+			grades='A'
+		}
+		else if(percentage<=79 && percentage>=60){
+			grades='B'
+		}
+		else if(percentage<=59 && percentage>=35){
+			grades='C'
+		}
+		else{
+			grades='Oops! You are Fail! Pehli fursat me Nikal';
+		}
+		
+		
+		document.getElementById('showdata').innerHTML=`Out of 600 your tatal is <u>${totalGrade}</u> and percentage is <u>${percentage}%</u>. <br> Your grade is ${grades}.`
+		
+		
+	}
+	
+</script>
+
+</body>
+</html>

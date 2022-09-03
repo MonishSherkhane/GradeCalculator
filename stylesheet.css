@@ -1,0 +1,43 @@
+*{
+	margin:0;
+	padding:0;
+	font-family: 'Acme', sans-serif;
+	
+}
+
+
+.main{
+	width:400px;
+	height:350px;
+	margin:auto;
+	padding:auto;
+	background:yellow;
+	position:absolute;
+	text-align:center;
+	
+	
+}
+
+.group1{
+	width:50%;
+	position:relative;
+	float:left;
+	margin-top:50px;;
+}
+.group2{
+	width:50%;
+	position:relative;
+	float:right;
+}
+
+input{
+	margin-top:18px;
+}
+
+#btn{
+	margin-bottom:20px;
+}
+
+h4{
+	color:green;
+}
